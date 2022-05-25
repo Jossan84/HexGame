@@ -4,6 +4,8 @@
 #include<iostream>
 #include<vector>
 
+
+
 class hexGraph{
 	public:
 		hexGraph(){
@@ -20,16 +22,20 @@ class hexGraph{
 
 int main(){
 	
-	std::vector<std::deque<int> > edgelist;
-	edgelist.resize(121);
-	for(int i=0; i<11; i++)
-		for(int j=0; j<11; j++)
-			//makeNode(i, j, edgelist[count++]);
+	int size = 5;
+	std::vector<std::vector<int> > edgeList;
+	edgeList.resize(size*size);
+	for(int i=0; i<size; i++)
+		for(int j=0; j<size; j++)
+			edgeList[i, j].push_back(0);
 	
-	for (auto& deque_of_integers : edgelist) {
-		for (auto& integer : deque_of_integers)
-			std::cout << integer;
-		std::cout << "\n";
+	// Print edgeList
+	for ( const auto &row : edgeList ){
+		for ( const auto &s : row ) std::cout << s << ' ';
+		std::cout << std::endl;
 	}
 	
+	// Print part of edgeList
+	for(auto i: edgeList[0])
+		std::cout << i << ' ';
 }
