@@ -4,8 +4,6 @@
 #include<iostream>
 #include<vector>
 
-
-
 class hexGraph{
 	public:
 		hexGraph(int size): size(size){
@@ -52,6 +50,12 @@ class hexGraph{
 			std::cout << "***************************" << std::endl;		
 			std::cout << std::endl;		
 		}
+		
+		void makeMovement(){
+			//Example movement
+			edgeList[0][0] = 1;
+		}
+		
 	private:
 		int size = 0;
 		std::vector<std::deque<int> > edgeList;
@@ -63,5 +67,6 @@ int main(){
 	int boardSize = 5;
 	
 	hexGraph TestGraph(boardSize);	
+	TestGraph.makeMovement();
 	TestGraph.plotHexBoard();
 }
